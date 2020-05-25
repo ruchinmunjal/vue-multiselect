@@ -2,22 +2,25 @@ module.exports = {
   root: true,
   // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
   extends: [
-    'standard'
+    // 'standard'
+    "plugin:vue/base"
+    // "@vue/standard"
   ],
-  parser: 'babel-eslint',
+  parser: "vue-eslint-parser",
   parserOptions: {
-    sourceType: 'module'
+    parser: "babel-eslint",
+    sourceType: "module"
   },
   // required to lint *.vue files
-  plugins: ['html'],
+  plugins: ["html", "vue"],
   // add your custom rules here
-  'rules': {
+  rules: {
     // allow paren-less arrow functions
-    'arrow-parens': 0,
+    "arrow-parens": 0,
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
+    "no-debugger": process.env.NODE_ENV === "production" ? 2 : 0
   },
   globals: {
     env: false
   }
-}
+};
